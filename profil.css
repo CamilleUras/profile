@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+:root {
+  --border: 1px solid #dce1e4;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+background-color: #eaecee ;
+color: #3c3e41;
+margin: 0;
+font-size: 15px;
+}
+
+a{
+  color: #3c3e41;
+  text-decoration: none;
+}
+
+header {
+  padding: 10px;
+  width: calc(100% - 20px);
+  border-bottom: var(--border);
+  display: grid;
+  grid-template-columns: 30% 70%;
+}
+
+header .logo img {
+  height: 50px;
+}
+
+header ul {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+header ul li{
+  padding: 0 30px;
+}
+
+.container{
+  width: 1200px;
+  max-width: 90%;
+  margin: auto;
+}
+
+.banner{
+  display: grid;
+  grid-template-columns: 60% 40%;
+  border-bottom: var(--border);
+  padding-bottom: 50px;
+}
+.banner .content{
+  text-align: justify;
+  padding-right: 50px;
+
+}
+.banner .content h1{
+  font-size: 4.5em;
+  margin: 0;
+}
+
+.gradientText{
+  display: inline-block;
+}
+.job::before{
+  content: attr(data-job1);
+  overflow: hidden;
+  display: inline-flex;
+  animation: 
+  effectText is linear infinite alternate
+}
+@keyframes effectText {
+  from {
+    max-width: 0;
+  }to{
+    max-width: 500px;
+  }
+}
