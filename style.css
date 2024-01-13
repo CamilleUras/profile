@@ -4,25 +4,30 @@
   --gradient:  linear-gradient(
     -45deg, #D000F7, #24BAE3 
     );
-    --box-shadow:5px 5px 15px #c1c8d3,
-    -5px -5px 15px #fff;
+    --box-shadow:1px 1px 5px #c1c8d3,
+    -1px -1px 5px #fff;
 }
 
 body {
 font-family: 'Poppins', sans-serif;
-background-color: #eaecee ;
-color: #3c3e41;
+background-color: black ;
+color: white;
 margin: 0;
 font-size: 15px;
 }
 
 a{
-  color: #3c3e41;
+  color: white;
   text-decoration: none;
 }
-
+header.sticky {
+  position: sticky;
+  top: 0;
+  background-color: black;
+  z-index: 1000; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
 header {
-  padding: 10px;
   width: calc(100% - 20px);
   border-bottom: var(--border);
   display: grid;
@@ -56,8 +61,21 @@ header ul li:hover{
   max-width: 90%;
   margin: auto;
 }
+
+.container h1 {
+  color: rgb(170, 7, 170);
+}
+
+@media screen and (min-width: 767px) {
+  h1 {
+    font-size: 10px; /* Ajuster la taille de police pour les écrans plus larges */
+  }
+}
+
 img{
   width: 100%;
+  height: 500px;
+  object-fit: cover;
 }
 
 .banner{
@@ -83,6 +101,7 @@ img{
       -45deg, #D000F7, #24BAE3 
   );
   -webkit-background-clip: text;
+  background-clip: text; 
   -webkit-text-fill-color: transparent;
 }
 .job::before{
@@ -106,15 +125,21 @@ img{
   margin-top: 50px;
 }
 
+.find i {
+  color: rgb(94, 5, 94);
+}
+
 .find ul{
   padding: 0;
   list-style: none;
   display: flex;
+  transition: transform 0.5s ease;
 }
 
 .find ul li {
   width: 50px;
   height: 50px;
+  background-image: var(--gradient);
   box-shadow: var(--box-shadow);
   margin: 10px;
   border-radius: 10px;
@@ -127,10 +152,25 @@ img{
 .find ul li:hover{
   color: #fff;
   background-image: var(--gradient);
+  transform: rotateY(180deg);
 }
 
 .banner .avatar img{
   max-width: 90%;
+  position: relative;
+  height: 100%;
+  width: calc(130% - 80px);
+  top: -100px;
+  right: 50px;
+  animation: animateUser 4s linear infinite;
+}
+
+@keyframes animateUser {
+  50%{
+    right: 30px;
+    top: -90px;
+  }
+  
 }
 
 .banner .avatar{
@@ -141,7 +181,7 @@ img{
   align-items: end;
 }
 
-.banner .avatar::before{
+/* .banner .avatar::before{
   position: absolute;
   width: 90%;
   height: 80%;
@@ -149,7 +189,8 @@ img{
   content: '';
   bottom: 0;
   z-index: -1;
-}
+  padding-bottom: 30%;
+} */
 
 .me{
   width: 90%;
@@ -164,7 +205,8 @@ img{
   font-size: 4.2em;
   background: -webkit-linear-gradient(  #D000F7, #24BAE3 );
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background-clip: text; 
+  -webkit-text-fill-color: transparent; 
 }
 
 .quote1{
@@ -172,8 +214,10 @@ img{
   font-size: 4.2em;
   background: -webkit-linear-gradient(  #D000F7, #24BAE3 );
   -webkit-background-clip: text;
+  background-clip: text; 
   -webkit-text-fill-color: transparent;
 }
+
 
 #skills {
 margin: auto;
@@ -190,9 +234,11 @@ margin: auto;
     display: grid;
     grid-template-columns: repeat(2,1fr);
     gap: 20px;
-    border-bottom: var(--border);
-    padding-bottom: 50px;
+
+    padding-bottom: 200px;
     margin-top: 50px;
+    padding-left: 90px;
+    padding-right: 90px;
   }
   
   .listSkill .evaluate{
